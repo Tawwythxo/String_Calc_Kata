@@ -3,6 +3,12 @@ function stringCalc(numbers) {
 
 	var eingabe = String(numbers);
 	var stSplit = eingabe.split(',');
+	
+	//Leere String-Elemente im Array löschen und herausfiltern
+	stSplit = stSplit.filter(function(x) 
+		{
+			return x != null && x != "";
+		});
 
 	if (stSplit.length > 1) 
 		{	

@@ -39,6 +39,6 @@ describe('stringCalc', () => {
 
 describe('stringCalc', () => {
 	it('should add ,1,2,3 to be NaN', () => {
-		expect(stringCalc(",1,2,3")).toBe(NaN)
+		expect(stringCalc(",1,2,3")).toBe(6)
 	})
 } )
