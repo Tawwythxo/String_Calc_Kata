@@ -6,7 +6,13 @@ function stringCalc(numbers) {
 
 	if (stSplit.length > 1) 
 		{	
-			var addition = parseInt(stSplit[0]) + parseInt(stSplit[1]);
+			var addition = 0;
+
+			for(var i = 0; i <= stSplit.length-1; i++)
+			{
+				addition = parseInt(addition) + parseInt(stSplit[i]);
+			}
+		
 			return addition;
 		}
 	else 
