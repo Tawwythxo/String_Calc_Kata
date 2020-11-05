@@ -123,3 +123,25 @@ describe('stringCalc', () => {
 		expect(stringCalc("1,\n-2,\n3,4\n-5")).toBe(undefined)
 	})
 } )
+
+
+
+describe('stringCalc', () => {
+	it('should add 1 ,\n 2 ,\n 3 ,4\n5,-1001 to be undefined due to negative number', () => {
+		expect(stringCalc("1,\n-2,\n3,4\n-5,-1001")).toBe(undefined)
+	})
+} )
+
+
+describe('stringCalc', () => {
+	it('should add //;\n1;2,1001 to be 3', () => {
+		expect(stringCalc("//;\n1;2,1001")).toBe(3)
+	})
+} )
+
+
+describe('stringCalc', () => {
+	it('should add //;\n1002;2003,1010 to be NaN', () => {
+		expect(stringCalc("//;\n1002;2003,1010")).toBe(NaN)
+	})
+} )

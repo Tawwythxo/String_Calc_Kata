@@ -26,6 +26,9 @@ function stringCalc(numbers) {
 
 	try 
 	{
+		//groﬂe Zahlen < 1000 herausfiltern
+		stSplit = stSplit.filter(element => element < 1000);
+
 		if(negative.length !== 0) 
 			{
 				throw new Error("negatives not allowed: ");
