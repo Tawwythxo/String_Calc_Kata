@@ -1,9 +1,8 @@
-
 function stringCalc(numbers) {
 
 	var stSplit;
+
 	var eingabe = String(numbers);
-	
 	var neuesTZ = eingabe.search("//");
 	
 	if (neuesTZ !== -1) 
@@ -16,6 +15,8 @@ function stringCalc(numbers) {
 			 stSplit = eingabe.split(/,|\n/);
 		}
 	
+	//negative Zahlen herausfiltern
+	var negative = stSplit.filter(element => element < 0);
 
 	//Leere String-Elemente im Array löschen und herausfiltern
 	stSplit = stSplit.filter(function(x) 
@@ -23,24 +24,35 @@ function stringCalc(numbers) {
 			return x != null && x != "";
 		});
 
-	console.log(stSplit);
+	try 
+	{
+		if(negative.length !== 0) 
+			{
+				throw new Error("negatives not allowed: ");
+			}
 
-	if (stSplit.length > 1) 
-		{	
-			var addition = 0;
+		if (stSplit.length > 1) 
+			{	
+				var addition = 0;
 
-			for(var i = 0; i <= stSplit.length-1; i++)
-				{
-					addition = parseInt(addition) + parseInt(stSplit[i]);
-				}
+				for(var i = 0; i <= stSplit.length-1; i++)
+					{
+						addition = parseInt(addition) + parseInt(stSplit[i]);
+					}
 		
-			return addition;
-		}
-	else 
-		{
-			var addition = parseInt(stSplit[0]);
-			return addition;
-		}
+				return addition;
+			}
+		else 
+			{
+				var addition = parseInt(stSplit[0]);
+				return addition;
+			}
+	}
+	catch (e) 
+	{
+		console.log(e + negative);
+	}
+
 
 }
 

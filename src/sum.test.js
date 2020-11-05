@@ -103,3 +103,23 @@ describe('stringCalc', () => {
 		expect(stringCalc("//;\n1;2")).toBe(3)
 	})
 } )
+
+
+
+describe('stringCalc', () => {
+	it('should add //;\n-1;2 to be undefined due to negative number', () => {
+		expect(stringCalc("//;\n-1;2")).toBe(undefined)
+	})
+} )
+
+describe('stringCalc', () => {
+	it('should add 1 ,\n 2 ,\n 3 ,4\n5 to be undefined due to negative number', () => {
+		expect(stringCalc("1,\n-2,\n3,4\n5")).toBe(undefined)
+	})
+} )
+
+describe('stringCalc', () => {
+	it('should add 1 ,\n 2 ,\n 3 ,4\n5 to be undefined due to negative number', () => {
+		expect(stringCalc("1,\n-2,\n3,4\n-5")).toBe(undefined)
+	})
+} )
