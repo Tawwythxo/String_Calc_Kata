@@ -89,3 +89,17 @@ describe('stringCalc', () => {
 		expect(stringCalc("1,\n2,\n3,4\n5")).toBe(15)
 	})
 } )
+
+
+describe('stringCalc', () => {
+	it('should add //;1;2,5 to be 8', () => {
+		expect(stringCalc("//;1;2,5")).toBe(8)
+	})
+} )
+
+
+describe('stringCalc', () => {
+	it('should add //;\n1;2 to be 3', () => {
+		expect(stringCalc("//;\n1;2")).toBe(3)
+	})
+} )

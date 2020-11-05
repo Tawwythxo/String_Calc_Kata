@@ -1,11 +1,23 @@
 
 function stringCalc(numbers) {
-	
+
+	var stSplit;
 	var eingabe = String(numbers);
-	var stSplit = eingabe.split(/,|\n/);
+	
+	var neuesTZ = eingabe.search("//");
+	
+	if (neuesTZ !== -1) 
+		{
+			 stSplit = eingabe.split(/,|\n|;/);
+			 stSplit = stSplit.slice(1);
+		}
+	else
+		{
+			 stSplit = eingabe.split(/,|\n/);
+		}
+	
 
 	//Leere String-Elemente im Array löschen und herausfiltern
-	
 	stSplit = stSplit.filter(function(x) 
 		{
 			return x != null && x != "";
