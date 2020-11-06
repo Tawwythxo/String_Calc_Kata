@@ -104,7 +104,11 @@ describe('stringCalc', () => {
 	})
 } )
 
-
+describe('stringCalc', () => {
+	it('should add //;\n1;2,7 to be 10', () => {
+		expect(stringCalc("//;\n1;2,7")).toBe(10)
+	})
+} )
 
 describe('stringCalc', () => {
 	it('should add //;\n-1;2 to be undefined due to negative number', () => {
@@ -143,5 +147,19 @@ describe('stringCalc', () => {
 describe('stringCalc', () => {
 	it('should add //;\n1002;2003,1010 to be NaN', () => {
 		expect(stringCalc("//;\n1002;2003,1010")).toBe(NaN)
+	})
+} )
+
+
+describe('stringCalc', () => {
+	it('should add //\n1;2,7;3 to be 13', () => {
+		expect(stringCalc("//\n1;2,7;3")).toBe(13)
+	})
+} )
+
+
+describe('stringCalc', () => {
+	it('should add //1;2;5 to be 8', () => {
+		expect(stringCalc("//;1;2;5")).toBe(8)
 	})
 } )
