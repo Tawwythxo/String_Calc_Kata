@@ -49,18 +49,17 @@ var stSplit;
 }
 
 
-var readline = require('readline')
+var readline = require('readline');
 
 const rl = readline.createInterface({
 	input: process.stdin,
 	output: process.stdout
 });
 
-var response = rl.question("Bitte gib Zahlen in dem Format ein: //;[Zahl];[Zahl];[Zahl]; ... oder [Zahl],[Zahl], ... oder durch Absaetze: ", answer)
+var response = rl.question("Bitte gib Zahlen in dem Format ein: //;[Zahl];[Zahl];[Zahl]; ... oder [Zahl],[Zahl], ... oder durch Absaetze: ", answer);
 
 
 function answer(response) {
-	console.log(response);
 	const sum = stringCalc(response);
 	console.log(sum);
 	rl.close ()
